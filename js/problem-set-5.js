@@ -27,6 +27,22 @@ function mario() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
+  height = Number(prompt("Please make sure integer is between 1 and 23"));
+  let pyrammid = "";
+  while (height > 23 || height < 1) {
+      height = Number(prompt("Please make sure integer is between 1 and 23"));
+  }
+  let p = document.getElementById("mario-easy-output");
+  for (let i = height; i > 0; i--) {
+    for (let k = i - 1; k > 0; k--) {
+      pyrammid = pyrammid + "&nbsp";
+    }
+    for (let k = height - i + 2; k > 0; k--) {
+      pyrammid = pyrammid + "#";
+    }
+    pyrammid = pyrammid + "<br>";
+  }
+p.innerHTML = "<code>" + pyrammid + "</code>";
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
@@ -62,6 +78,26 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
+  height = Number(prompt("Please make sure integer is between 1 and 23"));
+  let pyrammid = "";
+  while (height > 23 || height < 1) {
+      height = Number(prompt("Please make sure integer is between 1 and 23"));
+  }
+  let p = document.getElementById("mario-hard-output");
+  for (let i = height; i > 0; i--) {
+    for (let k = i - 1; k > 0; k--) {
+      pyrammid = pyrammid + "&nbsp";
+    }
+    for (let k = height - i + 2; k > 0; k--) {
+      pyrammid = pyrammid + "#";
+    }
+    pyrammid = pyrammid + "&nbsp" + "&nbsp";
+    for (let k = height - i + 2; k > 0; k--) {
+      pyrammid = pyrammid + "#";
+    }
+    pyrammid = pyrammid + "<br>";
+  }
+p.innerHTML = "<code>" + pyrammid + "</code>";
 
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
@@ -115,7 +151,7 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
-
+  card = prompt("Please enter valid credit card number");
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
    *       variable, do not modify it. If you find it necessary to manipulate
