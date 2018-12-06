@@ -297,7 +297,25 @@ function hurricane() {
  */
 
 function gymnastics() {
-
+  let i = 0;
+	while (i < 6) {
+		let inputScore = Number(prompt("Enter your score"));
+		if (inputScore >= 1 && inputScore <= 10 && Number.isInteger(inputScore)){
+			scores.push(inputScore);
+		i = i + 1
+		}
+	}
+  
+	scores.sort(function(a,b){return a-b;})
+	let max = scores[5];
+	let min = scores[0];
+	let revisedScores = [];
+	for (let k = 1; k < 5;k ++){
+		revisedScores.push(scores[k]);
+	}
+	let averageScore= ((revisedScores[0] + revisedScores[1] + revisedScores[2] + revisedScores[3]) / 4).toFixed(2);
+	p = document.getElementById("gymnastics-output");
+  p.innerHTML = "Discarded: " + min + ", " + max + "</br>Score: " + averageScore;
   /////////////////// DO NOT MODIFY
   let total = 0; //// DO NOT MODIFY
   let scores = []; // DO NOT MODIFY
