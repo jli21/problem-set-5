@@ -188,7 +188,33 @@ function credit() {
  */
 
 function guess() {
+  let randomNumber = Math.floor(Math.random() * 999) + 1;
+  let numberAttempts = 0;
+  let correctAnswer = false;
 
+  while (correctAnswer == false) {
+    let inputNumber = Number(prompt('Please enter your guess'))
+    if (inputNumber >= 1 && inputNumber <= 1000 && Number.isInteger(inputNumber)) {
+      console.log("1");
+      if (randomNumber == inputNumber){
+        numberAttempts = numberAttempts + 1;
+        correctAnswer = true;
+        alert("Correct Answer!");
+
+        p =  document.getElementById('guess-output');
+        p.innerHTML = "Number: " + randomNumber + "</br> Attempts: " + numberAttempts;
+      }
+
+      else if (inputNumber > randomNumber){
+        numberAttempts = numberAttempts + 1;
+        alert("The number is too high. Please try again.");
+      }
+      else if(inputNumber < randomNumber){
+        numberAttempts = numberAttempts + 1;
+        alert("This number is too low. Please try again.");
+      }
+    }
+  }
   // WRITE YOUR EXERCISE 4 CODE HERE
 
   ////////////////// DO NOT MODIFY
@@ -221,7 +247,28 @@ function guess() {
  */
 
 function hurricane() {
-
+  windspeed = Number(prompt('Enter your windspeed'));
+  if (windspeed >= 157){
+    document.getElementById('hurricane-output').innerHTML='Category 5 Hurricane.';
+  }
+  else if (windspeed >= 130){
+    document.getElementById('hurricane-output').innerHTML='Category 4 Hurricane.';
+  }
+  else if (windspeed >= 111){
+    document.getElementById('hurricane-output').innerHTML='Category 3 Hurricane.';
+  }
+  else if (windspeed >= 96){
+    document.getElementById('hurricane-output').innerHTML='Category 2 Hurricane.';
+  }
+  else if (windspeed >= 74){
+    document.getElementById('hurricane-output').innerHTML='Category 1 Hurricane.';
+  }
+  else if (windspeed >= 39){
+    document.getElementById('hurricane-output').innerHTML='Tropical Storm.';
+  }
+  else if (windspeed <= 38){
+    document.getElementById('hurricane-output').innerHTML='The skies are calm...';
+  }
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
