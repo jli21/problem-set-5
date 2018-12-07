@@ -145,7 +145,46 @@ p.innerHTML = "<code>" + pyrammid + "</code>";
  */
 
 function credit() {
+  let oddDigitSum = 0;
+  let evenDigitSum = 0;
 
+  while (true){
+    creditCardNumber = Number(prompt("Enter your credit card number: "));
+    if (creditCardNumber.length == 16 || creditCardNumber.length == 15 || creditCardNumber.length == 13) {
+      break;
+    }
+  }
+
+  for (let i = creditCardNumber.length - 2 ; i >= 0 ; i -= 2) {
+    let number = Number(creditCardNumber[i]) * 2;
+    let stringNumber = number.toString();
+    let sumNumbers = 0;
+
+    for (let j = 0; j < strnum.length; j++){
+      sumNumbers = sumNumbers + Number(strnum[j]);
+    }
+    evenDigitSum = sumNumbers + evenDigitSum;
+    console.log(evenDigitSum);
+  }
+
+  for (let k = creditCardNumber.length - 1; k >= 0;k -= 2){
+    oddDigitSum = oddDigitsSum + Number(creditCardNumber[k]);
+  }
+
+  console.log(oddDigitSum);
+
+  if (creditCardNumber.length == 15 && (creditCardNumber[0] == 3 && (creditCardNumber[1] == 7 || creditCardNumber[1] == 4)) && (oddDigitSum + evenDigitSum) % 10 == 0){
+    document.getElementById("credit-output").innerHTML="<img src ='./images/amex.png'/>";
+  }
+  else if ((creditCardNumber.length == 13 || creditCardNumber.length == 16) && creditCardNumber[0] == 4 && (oddDigitSum + evenDigitSum) % 10 == 0){
+    document.getElementById("credit-output").innerHTML="<img src ='./images/visa.png'/>";
+  }
+  else if (card.length == 16 && (creditCardNumber[0] == 5 && (creditCardNumber[1] == 1 || creditCardNumber[1] == 2 || creditCardNumber[1] == 4 || creditCardNumber[1] == 5)) && (oddDigitSum+evenDigitSum) % 10 == 0){
+    document.getElementById("credit-output").innerHTML="<img src ='./images/mastercard.png'/>";
+  }
+  else {
+    document.getElementById("credit-output").innerHTML="<img src ='./images/invalid.png'/>";
+  }
   //////////// DO NOT MODIFY
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
