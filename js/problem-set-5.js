@@ -344,12 +344,13 @@ function gymnastics() {
 		i = i + 1
 		}
 	}
-  
-	scores.sort(function(a,b){return a-b;})
-	let max = scores[5];
-	let min = scores[0];
+
+	scores.sort(function(a,b){return a - b;})
+	let maxScore = scores[5];
+	let minScore = scores[0];
 	let revisedScores = [];
-	for (let k = 1; k < 5;k ++){
+  
+	for (let k = 1; k < 5; k ++){
 		revisedScores.push(scores[k]);
 	}
 	let averageScore= ((revisedScores[0] + revisedScores[1] + revisedScores[2] + revisedScores[3]) / 4).toFixed(2);
