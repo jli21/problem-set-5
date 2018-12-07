@@ -401,7 +401,48 @@ function gymnastics() {
  */
 
 function reportCard() {
+	while (true){
+		let testInput = Number(prompt("Enter your test score"));
+		if (testsInput == -1){
+			break;
 
+		}
+		if (testsInput >= 0  && Number(testsInput <= 100)) {
+			testTotal = testsInput + testTotal;
+			tests = tests + 1;
+		}
+	}
+
+	while (true){
+		let quizInput = Number(prompt("Enter your quiz grades"));
+		if (quizInput == -1){
+			break;
+
+		}
+		if (quizInput >= 0 && Number(quizInput) <= 100){
+			quizTotal = Number(quizInput) + quizTotal;
+			quizzes ++;
+		}
+	}
+
+	while (true){
+		let homeworkInput = Number(prompt("Enter your homework grades"));
+		if (homeworkInput == -1){
+			break;
+		}
+
+		if (homeworkInput >= 0 && homeworkInput <= 100){
+			homeworkTotal = homeworkInput + homeworkTotal;
+			homeworks ++;
+		}
+	}
+
+	let testAverage = (testTotal/tests).toFixed(2);
+	let quizAverage = (quizTotal/quizzes).toFixed(2);
+	let homeworksAverage = (homeworkTotal/homeworks).toFixed(2);
+	finalGrade = (0.6 * testAverage + 0.3 * quizAverage+ 0.1 * homeworksAverage).toFixed(2);
+	let p = document.getElementById("report-card-output").
+  p.innerHTML = "Tests: " + testAverage + "</br>Quizzes: " + quizAverage + "</br>Homework: " + homeworksAverage + "</br>Grade: " + finalGrade;
   ///////////////////////// DO NOT MODIFY
   let testTotal = 0; ////// DO NOT MODIFY
   let quizTotal = 0; ////// DO NOT MODIFY
